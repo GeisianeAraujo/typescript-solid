@@ -1,11 +1,11 @@
 on:
-  pull_request:
+  push:
     branches:
       - main
 
 jobs:
   test:
-    name: pipeline-test-main
+    name: pipeline-coveralls
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -17,5 +17,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm install
-      - name: 💚 Run tests
-        run: npm test
+      - name: 💚 Run tests coverage
+        run: npm run test:coverage
+      - name: Send to coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
