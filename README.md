@@ -1,5 +1,7 @@
 # typescript-solid
 
+[![Coverage Status](https://coveralls.io/repos/github/GeisianeAraujo/typescript-solid/badge.svg)](https://coveralls.io/github/GeisianeAraujo/typescript-solid)
+
 Aplicando os princípios do SOLID em typescript em um funcionalidade simples de adicionar filmes aos favoritos.
 
 ## Instalação
